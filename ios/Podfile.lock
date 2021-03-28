@@ -57,14 +57,6 @@ PODS:
     - FlipperKit/Core
     - FlipperKit/FlipperKitNetworkPlugin
   - glog (0.3.5)
-  - GoogleToolboxForMac/Defines (2.1.0)
-  - GoogleToolboxForMac/Logger (2.1.0):
-    - GoogleToolboxForMac/Defines (= 2.1.0)
-  - GTMSessionFetcher/Core (1.1.6)
-  - GVRAudioSDK (1.120.0)
-  - GVRSDK (1.120.0):
-    - GoogleToolboxForMac/Logger (= 2.1.0)
-    - GTMSessionFetcher/Core (= 1.1.6)
   - libevent (2.1.12)
   - OpenSSL-Universal (1.1.180)
   - RCT-Folly (2020.01.13.00):
@@ -324,10 +316,9 @@ PODS:
     - React-cxxreact (= 0.64.0)
     - React-jsi (= 0.64.0)
     - React-perflogger (= 0.64.0)
-  - ViroKit (1.0):
-    - GVRAudioSDK (= 1.120.0)
-    - GVRSDK (= 1.120.0)
-  - ViroReact (1.0)
+  - ViroKit_static_lib (1.0)
+  - ViroReact (1.0):
+    - React
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -381,8 +372,8 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
-  - ViroKit (from `../node_modules/react-viro/ios/dist/ViroRenderer/`)
-  - ViroReact (from `../node_modules/react-viro/ios/`)
+  - "ViroKit_static_lib (from `../node_modules/@viro-community/react-viro/ios/dist/ViroRenderer/static_lib`)"
+  - "ViroReact (from `../node_modules/@viro-community/react-viro/ios/`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -396,10 +387,6 @@ SPEC REPOS:
     - Flipper-PeerTalk
     - Flipper-RSocket
     - FlipperKit
-    - GoogleToolboxForMac
-    - GTMSessionFetcher
-    - GVRAudioSDK
-    - GVRSDK
     - libevent
     - OpenSSL-Universal
     - YogaKit
@@ -459,10 +446,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
-  ViroKit:
-    :path: "../node_modules/react-viro/ios/dist/ViroRenderer/"
+  ViroKit_static_lib:
+    :path: "../node_modules/@viro-community/react-viro/ios/dist/ViroRenderer/static_lib"
   ViroReact:
-    :path: "../node_modules/react-viro/ios/"
+    :path: "../node_modules/@viro-community/react-viro/ios/"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -480,10 +467,6 @@ SPEC CHECKSUMS:
   Flipper-RSocket: 127954abe8b162fcaf68d2134d34dc2bd7076154
   FlipperKit: 8a20b5c5fcf9436cac58551dc049867247f64b00
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
-  GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
-  GTMSessionFetcher: 6aacd0ab48ddf0c3633ab2642d792abfcad1b08a
-  GVRAudioSDK: 302f0a8f190d855868ea07f246ce4f9b44c392ae
-  GVRSDK: 0cb9d0ce06a84d698e61e3db9509766022dcf815
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OpenSSL-Universal: 1aa4f6a6ee7256b83db99ec1ccdaa80d10f9af9b
   RCT-Folly: ec7a233ccc97cc556cf7237f0db1ff65b986f27c
@@ -509,11 +492,11 @@ SPEC CHECKSUMS:
   React-RCTVibration: 0fd6b21751a33cb72fce1a4a33ab9678416d307a
   React-runtimeexecutor: cad74a1eaa53ee6e7a3620231939d8fe2c6afcf0
   ReactCommon: cfe2b7fd20e0dbd2d1185cd7d8f99633fbc5ff05
-  ViroKit: b3c0e0d4a40c2e78d31bb09740a49cd8bf6bd68f
-  ViroReact: 7ec32276dcd1883662b4587eaedfff67f7fc3625
+  ViroKit_static_lib: 757b887d543c671838296e5ad32f75598067dcba
+  ViroReact: f4980e6b04918c4340637f9cbaae22a6bb7ea440
   Yoga: 8c8436d4171c87504c648ae23b1d81242bdf3bbf
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 987d7c3d41541c6b2c2a1729acbd824a1303e9f8
+PODFILE CHECKSUM: 1c88dbf6b8032838b548a154b5be3994dc23c9fd
 
 COCOAPODS: 1.10.1

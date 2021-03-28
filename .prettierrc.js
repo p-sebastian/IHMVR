@@ -1,7 +1,8 @@
 module.exports = {
-  bracketSpacing: false,
-  jsxBracketSameLine: true,
-  singleQuote: true,
+  plugins: ['./node_modules/prettier-plugin-import-sort/src'],
+  semi: false,
   trailingComma: 'all',
-  arrowParens: 'avoid',
-};
+  singleQuote: true,
+  printWidth: 120,
+  tabWidth: 2,
+}
