@@ -1,35 +1,48 @@
-import { ViroARScene, ViroAmbientLight, ViroBox, ViroSpotLight } from '@viro-community/react-viro'
+import { Viro360Image, Viro3DObject, ViroARScene, ViroBox, ViroImage, ViroText } from '@viro-community/react-viro'
 import React from 'react'
 
 import { HomeHooks } from './Home.hooks'
-import { HomeStyles as UI } from './Home.styles'
 
 export const HomeScreen: React.FC = () => {
-  const { onTrackingUpdated } = useHome()
+  const { onTrackingUpdated, onClick, index } = useHome()
 
   return (
     <ViroARScene onTrackingUpdated={onTrackingUpdated}>
-      <UI.Text text="Interaccion HM hgfjhgfh" />
-
-      <ViroBox
-        position={[0, -0.5, -1]}
+      <ViroText
+        text="Interaccion HM"
+        textAlign="center"
+        position={[0, 1, -10]}
+        style={{ fontSize: 30, fontWeight: 'bold' }}
+        outerStroke={{ type: 'Outline', width: 1, color: '#000000' }}
         animation={{ name: 'rotate', run: true, loop: true }}
-        scale={[0.3, 0.3, 0.1]}
+      />
+
+      <ViroImage
+        position={[0, -0.5, -2]}
+        height={2}
+        width={2}
+        source={{ uri: IMAGES[index] }}
+        scale={[0.3, 0.3]}
+        onClick={onClick}
         materials={['grid']}
       />
 
-      <ViroAmbientLight color={'#aaaaaa'} influenceBitMask={1} />
-
-      <ViroSpotLight
-        innerAngle={5}
-        outerAngle={90}
-        direction={[0, -1, -0.2]}
-        position={[0, 3, 1]}
-        color="#aaaaaa"
-        castsShadow={true}
+      <ViroText
+        text="Playa Murcielago D=0.5Km"
+        textAlign="center"
+        position={[0, -5, -10]}
+        style={{ fontSize: 30, fontWeight: 'bold' }}
+        outerStroke={{ type: 'Outline', width: 1, color: '#000000' }}
+      />
+      <ViroText
+        text="Distancia 0.5Km"
+        textAlign="center"
+        position={[0, -11.5, -20]}
+        style={{ fontSize: 30, fontWeight: 'bold' }}
+        outerStroke={{ type: 'Outline', width: 1, color: '#000000' }}
       />
     </ViroARScene>
   )
 }
 
-const { useHome } = HomeHooks
+const { useHome, IMAGES } = HomeHooks
